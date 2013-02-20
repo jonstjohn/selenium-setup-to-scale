@@ -2,8 +2,9 @@
 require_once 'PHPWebDriver/__init__.php';
 require_once 'CwSearchPage.php';
 require_once 'CwDailyForecastPage.php';
+require_once 'PHPUnit/Autoload.php';
 
-class ForecastTest extends PHPUnit_Framework_TestCase
+class CwForecastHelpersTest extends PHPUnit_Framework_TestCase
 {
     protected $session;
 

@@ -2,10 +2,20 @@
 require_once 'PHPWebDriver/__init__.php';
 require_once 'PHPUnit/Autoload.php';
 
+/**
+ * Climbing Weather daily forecast test
+ */
 class CwForecastTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * Web driver browser session
+     * @var PHPWebDriver_WebDriver
+     */
     protected $session;
 
+    /**
+     * Test setup
+     */
     protected function setUp()
     {   
         $wd_host = 'http://127.0.0.1:4444/wd/hub'; // this is the default
@@ -15,6 +25,9 @@ class CwForecastTest extends PHPUnit_Framework_TestCase
         $this->session->implicitlyWait(10);
     }
 
+    /**
+     * Test 7 day forecast
+     */
     public function testForecast7Day()
     {
         // Open ClimbingWeather.com
@@ -33,6 +46,9 @@ class CwForecastTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(count($days), 7);
     }
 
+    /**
+     * Test tear down
+     */
     protected function tearDown()
     {
         // Close session

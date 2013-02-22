@@ -24,7 +24,6 @@ class CwForecastHelpersTest extends PHPUnit_Framework_TestCase
         $searchHelper->search('Little Cottonwood Canyon');
 
         // Check for number of forecast days, should be 7
-        //$days = $this->session->elements('xpath', "//table[contains(@class, 'forecast')]//td[contains(@class, 'day_date')]");
         $dailyHelper = new CwDailyForecastPage($this->session);
         $this->assertEquals($dailyHelper->getDayCount(), 7);
     }
